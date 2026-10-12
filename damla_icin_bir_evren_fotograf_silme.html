@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100d2c">
+<title>Damla'ya — Bir Evren Dolusu Biz</title>
+<style>
+:root{--night:#100d2c;--deep:#17123d;--violet:#a994ff;--lilac:#e4dcff;--pink:#f4b9df;--gold:#f7d9a6;--muted:#b9b1d8;--glass:rgba(255,255,255,.075)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% 10%,#30205d 0,transparent 35%),radial-gradient(ellipse at 90% 45%,#21184d 0,transparent 33%),var(--night);color:#fff;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.55;background-image:radial-gradient(1px 1px at 10% 20%,#fff 98%,transparent),radial-gradient(1.5px 1.5px at 32% 72%,#d9ceff 98%,transparent),radial-gradient(1px 1px at 81% 16%,#fff 98%,transparent),radial-gradient(1px 1px at 67% 83%,#fff 98%,transparent),radial-gradient(1px 1px at 94% 61%,#d9ceff 98%,transparent),radial-gradient(1px 1px at 45% 35%,#fff 98%,transparent);background-size:300px 300px;z-index:-1}
+button,input,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1080px,calc(100% - 36px));margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;color:var(--muted);font-size:.86rem}.brand{letter-spacing:.14em;text-transform:uppercase;font-size:.75rem;color:var(--lilac)}.nav a{color:inherit;text-decoration:none;margin-left:18px}.hero{min-height:82vh;display:grid;place-items:center;text-align:center;position:relative;padding:60px 0 90px}.eyebrow{color:var(--pink);text-transform:uppercase;letter-spacing:.22em;font-size:.72rem}.hero h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(3.2rem,11vw,7.4rem);line-height:.95;letter-spacing:-.055em;margin:22px 0}.hero h1 em{color:var(--violet);font-weight:400}.subtitle{max-width:520px;margin:0 auto;color:#d2cbea;line-height:1.8;font-size:1rem}.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{border:1px solid #a994ff65;background:#a994ff1b;color:white;border-radius:99px;padding:12px 19px;transition:.2s}.btn:hover{transform:translateY(-2px);background:#a994ff35}.btn.primary{background:var(--lilac);color:#20163f;border-color:transparent}.tulip{font-size:2rem;display:inline-block;filter:drop-shadow(0 0 16px #ba91ff75);animation:float 5s ease-in-out infinite}.tulip.big{font-size:4.5rem;margin-bottom:12px}@keyframes float{50%{transform:translateY(-9px) rotate(4deg)}}.scrollhint{position:absolute;bottom:24px;color:#8f86b5;font-size:.72rem;letter-spacing:.15em}.section{padding:76px 0}.section-head{text-align:center;margin-bottom:36px}.kicker{color:var(--pink);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}.section h2{font:400 clamp(2.1rem,6vw,3.5rem)/1.1 Georgia,serif;margin:12px 0}.section-head p{color:var(--muted);line-height:1.7;max-width:570px;margin:0 auto}.counter-card{max-width:760px;margin:auto;padding:clamp(24px,5vw,44px);border:1px solid #c7b7ff30;background:linear-gradient(135deg,#ffffff0e,#a994ff0a);border-radius:28px;text-align:center;box-shadow:0 20px 80px #05031845}.counter-number{font:400 clamp(3.4rem,12vw,6.8rem)/1 Georgia,serif;color:var(--lilac);letter-spacing:-.06em;margin:18px 0 10px}.counter-label{color:var(--muted)}.counter-units{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}.unit{padding:10px 14px;border-radius:13px;background:#ffffff08;border:1px solid #ffffff12;min-width:74px}.unit b{display:block;font-size:1.2rem;font-weight:500}.unit span{font-size:.68rem;color:var(--muted)}.timeline{max-width:780px;margin:auto;position:relative}.timeline:before{content:"";position:absolute;left:18px;top:10px;bottom:10px;width:1px;background:linear-gradient(var(--pink),#8b75df,transparent)}.memory{position:relative;padding:0 0 34px 58px}.dot{position:absolute;left:10px;top:7px;width:17px;height:17px;border:4px solid #211743;background:var(--pink);border-radius:50%;box-shadow:0 0 0 1px #e4dcff50,0 0 18px #f4b9df66}.memory-card{padding:22px;border-radius:20px;background:var(--glass);border:1px solid #ffffff13;display:grid;grid-template-columns:1fr minmax(110px,180px);gap:20px;align-items:center}.memory-date{color:var(--pink);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}.memory h3{font:400 1.5rem Georgia,serif;margin:8px 0}.memory p{margin:0;color:#c9c1e2;line-height:1.7;font-size:.92rem}.photo{min-height:145px;border-radius:14px;background:linear-gradient(145deg,#6e549d,#21163f);display:grid;place-items:center;overflow:hidden;position:relative;color:#d9ccff;text-align:center;font-size:.78rem;padding:12px}.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.photo span{position:relative;text-shadow:0 1px 8px #130a2b}.photo input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:2}.music-card{max-width:680px;margin:auto;display:flex;align-items:center;gap:20px;padding:22px;border-radius:24px;border:1px solid #c7b7ff30;background:var(--glass)}.record{width:78px;height:78px;flex:0 0 78px;border-radius:50%;background:repeating-radial-gradient(circle,#1a153b 0 5px,#30235e 6px 7px);display:grid;place-items:center;border:5px solid #443477;box-shadow:0 0 25px #9b7bff2c}.record span{background:var(--pink);width:20px;height:20px;border-radius:50%}.music-info{flex:1;min-width:0}.music-info h3{font:400 1.35rem Georgia,serif;margin:0 0 6px}.music-info p{color:var(--muted);margin:0;font-size:.86rem;line-height:1.5}.music-controls{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap}.small{font-size:.8rem;padding:9px 13px}.final-card{max-width:780px;margin:auto;text-align:center;padding:clamp(26px,6vw,56px);border-radius:30px;border:1px solid #d8bfff35;background:linear-gradient(135deg,#30205c88,#171033d9);position:relative;overflow:hidden}.final-card:before{content:"✦";position:absolute;font-size:14rem;color:#ffffff05;top:-60px;right:-20px}.final-card blockquote{font:400 clamp(1.5rem,4vw,2.5rem)/1.5 Georgia,serif;margin:24px 0;color:#f2edff}.final-card p{color:#c8bfdf;line-height:1.9;max-width:560px;margin:0 auto}.signature{color:var(--pink);margin-top:26px;font-family:Georgia,serif;font-style:italic;font-size:1.2rem}.footer{text-align:center;padding:34px 0 48px;color:#8f86b5;font-size:.75rem}.edit-panel{margin:30px auto 0;max-width:780px;padding:20px;border:1px dashed #a994ff70;border-radius:20px;background:#100d2caa}.edit-panel summary{cursor:pointer;color:var(--lilac);font-weight:600}.edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:.78rem;color:var(--muted)}.field input,.field textarea{width:100%;border:1px solid #a994ff40;border-radius:10px;background:#ffffff09;color:white;padding:11px;outline:none}.field textarea{min-height:90px;resize:vertical}.edit-note{font-size:.76rem;color:#9c93bc;line-height:1.6}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;background:#e4dcff;color:#21163f;border-radius:99px;padding:11px 17px;font-size:.85rem;transition:.25s;pointer-events:none;z-index:10}.toast.show{opacity:1;transform:translate(-50%,0)}.sparkle{position:absolute;color:#e4dcff8c;pointer-events:none;animation:twinkle 3s infinite ease-in-out}.sparkle:nth-child(2n){animation-delay:1.2s}@keyframes twinkle{50%{opacity:.25;transform:scale(.8)}}.hero-counter{width:min(390px,100%);margin:27px auto 0;padding:18px 20px 16px;border:1px solid #d9c8ff55;border-radius:24px;background:linear-gradient(135deg,#b9a0ff20,#f4b9df0b);box-shadow:0 0 55px #8c68e526,inset 0 1px #ffffff18;backdrop-filter:blur(10px)}.hero-counter-caption{font-size:.63rem;letter-spacing:.16em;color:#d6c8ff}.hero-counter-number{font:400 clamp(3rem,10vw,5rem)/1 Georgia,serif;color:#fff;margin:9px 0 4px;letter-spacing:-.06em;text-shadow:0 0 25px #c7aaff60}.hero-counter-number small{font:400 .95rem ui-sans-serif,system-ui;color:var(--pink);letter-spacing:0;margin-left:8px}.hero-counter-sub{font-size:.78rem;color:#c9bde9}.album-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:900px;margin:auto}.album-card{border:1px solid #ffffff18;background:linear-gradient(145deg,#ffffff0b,#a994ff08);border-radius:22px;padding:20px;min-width:0}.album-top{display:flex;align-items:flex-start;gap:13px;margin-bottom:17px}.album-icon{width:42px;height:42px;display:grid;place-items:center;flex:0 0 42px;border-radius:14px;background:#a994ff1c;color:var(--pink);font-size:1.3rem}.album-top h3{font:400 1.35rem Georgia,serif;margin:1px 0 6px}.album-top p{font-size:.82rem;color:var(--muted);line-height:1.55;margin:0}.admin-only{display:none!important}.admin-mode .admin-only{display:inline-flex!important}.admin-mode label.photo.admin-only{display:grid!important}.admin-mode .admin-only.admin-block{display:block!important}.album-upload{display:inline-flex;align-items:center;gap:7px;padding:9px 13px;border:1px solid #a994ff60;border-radius:99px;color:var(--lilac);font-size:.78rem;cursor:pointer;margin-bottom:15px}.album-upload:hover{background:#a994ff18}.album-upload input{display:none}.album-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.album-photo{aspect-ratio:1;min-width:0;border-radius:10px;overflow:hidden;background:#2a2050;position:relative}.album-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s}.album-photo:hover img{transform:scale(1.05)}.album-empty{grid-column:1/-1;padding:24px 8px;text-align:center;color:#8f86b5;border:1px dashed #a994ff30;border-radius:12px;font-size:.78rem}.album-footnote{max-width:900px;margin:14px auto 0;color:#9288b3;font-size:.74rem;line-height:1.6}@media(max-width:620px){.hero-counter{margin-top:24px;padding:17px}.album-grid{grid-template-columns:1fr;gap:13px}.album-card{padding:17px}.album-photos{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:620px){.nav a{margin-left:10px;font-size:.78rem}.nav{padding:18px 0}.hero{min-height:76vh;padding:45px 0 70px}.memory-card{grid-template-columns:1fr;gap:14px}.photo{min-height:210px;order:-1}.timeline:before{left:10px}.memory{padding-left:38px}.dot{left:2px}.music-card{align-items:flex-start;gap:14px;padding:17px}.record{width:58px;height:58px;flex-basis:58px}.edit-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.section{padding:60px 0}.counter-units{gap:7px}.unit{min-width:65px;padding:9px}.footer{padding-bottom:34px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+
+/* Tam ekran özel fotoğraf çerçevesi */
+.photo-viewer{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(9,5,24,.88);backdrop-filter:blur(12px)}
+.photo-viewer.open{display:flex}
+.photo-viewer-frame{position:relative;width:min(920px,96vw);max-height:92vh;padding:12px;border:1px solid rgba(205,177,255,.65);border-radius:22px;background:linear-gradient(145deg,#24163f,#100b23 65%,#30204b);box-shadow:0 25px 90px #000b,0 0 35px #a994ff25}
+.photo-viewer-frame:before{content:"";position:absolute;inset:5px;border:1px solid rgba(255,255,255,.12);border-radius:16px;pointer-events:none}
+.photo-viewer-img{display:block;max-width:100%;max-height:calc(92vh - 100px);width:auto;height:auto;object-fit:contain;margin:auto;border-radius:12px}
+.photo-viewer-caption{text-align:center;color:#e7dcff;font-family:Georgia,serif;font-size:1rem;padding:12px 40px 4px}
+.photo-viewer-close{position:absolute;z-index:2;right:10px;top:10px;width:38px;height:38px;border:1px solid #ffffff40;border-radius:50%;background:#160e2be8;color:#fff;font-size:24px;cursor:pointer}
+.album-photo{cursor:zoom-in}
+.album-photo:focus-visible{outline:2px solid #d8bfff;outline-offset:3px}
+.photo img{cursor:zoom-in}
+@media(max-width:620px){.photo-viewer{padding:10px}.photo-viewer-frame{padding:8px;border-radius:16px}.photo-viewer-img{max-height:calc(90vh - 95px)}}
+
+
+/* Zarif, sade fotoğraf çerçevesi */
+#photoModal .photo-modal-backdrop,
+.photo-modal-backdrop {
+  background: rgba(12, 8, 20, .88) !important;
+  backdrop-filter: blur(8px);
+}
+#photoModal .photo-modal-frame,
+.photo-modal-frame {
+  border: 1px solid rgba(231, 218, 245, .48) !important;
+  border-radius: 10px !important;
+  padding: 8px !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.025)) !important;
+  box-shadow: 0 18px 60px rgba(0,0,0,.42), 0 0 0 1px rgba(174,139,210,.12) !important;
+}
+#photoModal img,
+.photo-modal-frame img {
+  display: block;
+  max-width: min(88vw, 980px) !important;
+  max-height: 78vh !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 4px !important;
+}
+
+
+/* Uploaded memory photos remain visible to visitors; only the upload affordance is admin-only. */
+.photo.admin-only:has(img) { display: grid !important; }
+.photo.admin-only:has(img) > span { display: none !important; }
+.photo.admin-only:has(img) input[type="file"] { display: none !important; }
+
+
+.admin-delete-photo{position:absolute;top:7px;right:7px;z-index:4;border:1px solid #ffffff55;background:rgba(25,12,35,.88);color:#fff;border-radius:999px;padding:5px 9px;font-size:12px;cursor:pointer;display:none}
+.admin-mode .admin-delete-photo{display:inline-flex;align-items:center;gap:4px}
+.album-photo{position:relative}
+.photo{position:relative}
+</style>
+</head>
+<body>
+<div class="photo-viewer" id="photoViewer" role="dialog" aria-modal="true" aria-label="Fotoğraf görüntüleyici" onclick="closePhotoViewer(event)">
+  <div class="photo-viewer-frame">
+    <button class="photo-viewer-close" type="button" aria-label="Kapat" onclick="closePhotoViewer()">×</button>
+    <img class="photo-viewer-img" id="photoViewerImg" alt="Büyük fotoğraf">
+    <div class="photo-viewer-caption" id="photoViewerCaption">Birlikte bir anımız</div>
+  </div>
+</div>
+<div class="wrap">
+  <nav class="nav"><div class="brand">✦ DAMLA'YA · BİR EVREN DOLUSU BİZ</div><div><a href="#sayac">Sayaç</a><a href="#anilar">Anılar</a><a href="#albumler">Albümler</a></div></nav>
+  <header class="hero">
+    <span class="sparkle" style="top:18%;left:12%">✦</span><span class="sparkle" style="top:25%;right:13%;font-size:1.3rem">✧</span><span class="sparkle" style="bottom:25%;left:22%">✧</span><span class="sparkle" style="bottom:22%;right:20%">✦</span>
+    <div><div class="tulip big">🌷</div><div class="eyebrow">Küçük bir evren, yalnızca ikimize</div><h1>İyi ki <em>sen,</em><br>Damla.</h1><p class="subtitle" id="heroText">Bazı insanlar bir yere gelmez; insanın bütün dünyasının yerini değiştirir. Bu küçük köşe, benim dünyamda açtığın yere.</p><div class="hero-counter"><div class="hero-counter-caption">BİZİM HİKÂYEMİZ KAÇ GÜNDÜR SÜRÜYOR?</div><div class="hero-counter-number"><span id="heroDays">∞</span><small>gün</small></div><div class="hero-counter-sub" id="heroCounterSub">Her gün, senden yana.</div></div><div class="hero-actions"><button class="btn primary" onclick="document.querySelector('#anilar').scrollIntoView({behavior:'smooth'})">Hikâyemize göz at ↓</button><button class="btn" onclick="document.querySelector('#gelecek').scrollIntoView({behavior:'smooth'})">Sana bir sözüm var</button></div></div>
+    <div class="scrollhint">AŞAĞIYA DOĞRU, BİZİM HİKÂYEMİZ</div>
+  </header>
+  <section class="section" id="sayac"><div class="section-head"><div class="kicker">Zaman geçiyor, biz kalıyoruz</div><h2>Birlikte geçen zaman</h2><p>Takvim günleri sayabilir. Benim içinse her biri, seninle biriktirdiğimiz hikâyenin başka bir satırı.</p></div><div class="counter-card"><div class="tulip">✧ 🌷 ✧</div><div class="counter-number" id="days">—</div><div class="counter-label">gündür hayatımın güzel bir parçasısın</div><div class="counter-units"><div class="unit"><b id="years">0</b><span>YIL</span></div><div class="unit"><b id="months">0</b><span>AY</span></div><div class="unit"><b id="daysLeft">0</b><span>GÜN</span></div></div><p style="color:#958ab8;font-size:.72rem;margin:20px 0 0" id="counterNote"></p></div></section>
+  <section class="section" id="anilar"><div class="section-head"><div class="kicker">Küçük şeyler, kocaman anlamlar</div><h2>Bizden kalan yıldızlar</h2><p>Her anı gökyüzünde ayrı bir yıldız gibi. </p></div><div class="timeline" id="timeline">
+    <article class="memory"><span class="dot"></span><div class="memory-card"><div><div class="memory-date" data-edit="date1">İlk sayfa</div><h3 data-edit="title1">Her şeyin başladığı yer</h3><p data-edit="text1">Belki o gün sıradan görünüyordu. Ama geriye dönüp bakınca, hikâyemizin ilk cümlesiymiş.</p></div><label class="photo admin-only"><span>＋<br>İlk anımız</span><input type="file" accept="image/*" aria-label="İlk anı fotoğrafı yükle" onchange="loadPhoto(this)"></label></div></article>
+    <article class="memory"><span class="dot"></span><div class="memory-card"><div><div class="memory-date" data-edit="date2">Güzel bir gün</div><h3 data-edit="title2">Gülüşünü hatırladığım an</h3><p data-edit="text2">Bazen aklımda kalan şey ne yaptığımız değil; yanımdayken dünyanın nasıl daha hafif hissettirdiği.</p></div><label class="photo admin-only"><span>＋<br>Birlikte güldüğümüz bir an</span><input type="file" accept="image/*" aria-label="İkinci anı fotoğrafı yükle" onchange="loadPhoto(this)"></label></div></article>
+    <article class="memory"><span class="dot"></span><div class="memory-card"><div><div class="memory-date" data-edit="date3">Bugün</div><h3 data-edit="title3">Hâlâ en sevdiğim tesadüf</h3><p data-edit="text3">Biriktirecek daha çok yerimiz, görecek daha çok manzaramız ve anlatacak daha çok hikâyemiz var.</p></div><label class="photo admin-only"><span>＋<br>En sevdiğimiz fotoğraf</span><input type="file" accept="image/*" aria-label="Üçüncü anı fotoğrafı yükle" onchange="loadPhoto(this)"></label></div></article>
+  </div></section>
+  <section class="section" id="albumler"><div class="section-head"><div class="kicker">Fotoğraflara sığan koca bir dünya</div><h2>Bizim fotoğraf albümlerimiz</h2><p>Her albüm başka bir ruh hâli, başka bir zaman. Bir albüme dokunup birden fazla fotoğraf seçebilirsin.</p></div>
+    <div class="album-grid">
+      <article class="album-card"><div class="album-top"><span class="album-icon">✧</span><div><h3>İlk anılar</h3><p>Başlangıçlar, ilk buluşmalar, ilk fotoğraflar.</p></div></div><label class="album-upload admin-only">＋ Fotoğrafları ekle<input type="file" accept="image/*" multiple onchange="loadAlbum(this,'albumFirst')"></label><div class="album-photos" id="albumFirst"><div class="album-empty">Henüz fotoğraf eklenmedi</div></div></article>
+      <article class="album-card"><div class="album-top"><span class="album-icon">🌷</span><div><h3>En güzel günler</h3><p>Birlikte güldüğümüz ve unutmak istemediğimiz anlar.</p></div></div><label class="album-upload admin-only">＋ Fotoğrafları ekle<input type="file" accept="image/*" multiple onchange="loadAlbum(this,'albumDays')"></label><div class="album-photos" id="albumDays"><div class="album-empty">Henüz fotoğraf eklenmedi</div></div></article>
+      <article class="album-card"><div class="album-top"><span class="album-icon">☾</span><div><h3>Bizim küçük dünyamız</h3><p>Sadece bize anlamlı gelen yerler ve ayrıntılar.</p></div></div><label class="album-upload admin-only">＋ Fotoğrafları ekle<input type="file" accept="image/*" multiple onchange="loadAlbum(this,'albumUs')"></label><div class="album-photos" id="albumUs"><div class="album-empty">Henüz fotoğraf eklenmedi</div></div></article>
+      <article class="album-card"><div class="album-top"><span class="album-icon">✦</span><div><h3>Gelecekten kareler</h3><p>Henüz çekilmemiş, ama bir gün burada olacak fotoğraflar.</p></div></div><label class="album-upload admin-only">＋ Fotoğrafları ekle<input type="file" accept="image/*" multiple onchange="loadAlbum(this,'albumFuture')"></label><div class="album-photos" id="albumFuture"><div class="album-empty">Henüz fotoğraf eklenmedi</div></div></article>
+    </div><p class="album-footnote">Fotoğraf ekleme ve düzenleme yalnızca Tuna bölümünden giriş yapıldığında kullanılabilir.</p>
+  </section>
+  <section class="section" id="sarki"><div class="section-head"><div class="kicker">Bir şarkı, bin hatıra</div><h2>Bu da bizim melodimiz</h2><p>Bize ait bir melodi.</p></div><div class="music-card"><div class="record" id="record"><span></span></div><div class="music-info"><h3 id="songTitle">Bizim şarkımız</h3><p id="songArtist"></p><div class="music-controls"><label class="btn small admin-only">Şarkı seç<input id="audioFile" type="file" accept="audio/*" style="display:none" onchange="loadAudio(this)"></label><button class="btn small" id="playBtn" onclick="toggleMusic()">▶ Dinle</button><button class="btn small" onclick="stopMusic()">■ Durdur</button></div><audio id="audio" preload="none" loop></audio></div></div></section>
+  <section class="section" id="gelecek"><div class="section-head"><div class="kicker">Henüz yazılmamış sayfalar</div><h2>Sana, geleceğimizden</h2></div><div class="final-card"><div class="tulip big">🌷</div><blockquote id="futureMessage">“Geleceğin bize ne getireceğini bilmiyorum. Ama güzel günlerde de zor günlerde de birbirimizi dinlemeyi, birlikte gülmeyi ve aynı gökyüzüne bakmayı seçelim istiyorum.”</blockquote><p id="futureExtra">Henüz yaşamadığımız onca şey var. Yeni yollar, küçük ev içi mutluluklar, ansızın gelen kahkahalar… Umarım yıllar sonra bu satırlara döndüğümüzde, yan yana oturup “Bak, daha o zaman da hayal etmişiz,” deriz.</p><div class="signature" id="signature">Seni seven, ben.</div></div>
+    <div class="admin-entry" style="max-width:780px;margin:30px auto 0;text-align:center">
+      <button class="btn" id="adminToggle" onclick="toggleAdmin()">Tuna</button>
+      <div id="adminLogin" style="display:none;margin:16px auto 0;max-width:340px;padding:18px;border:1px solid #a994ff55;border-radius:18px;background:#100d2cee;text-align:left">
+        <label for="adminPassword" style="display:block;color:#c9c1e2;font-size:.85rem;margin-bottom:8px">Düzenleme şifresi</label>
+        <input id="adminPassword" type="password" inputmode="numeric" autocomplete="current-password" placeholder="Şifre" style="width:100%;border:1px solid #a994ff55;border-radius:10px;background:#ffffff0b;color:white;padding:12px" onkeydown="if(event.key==='Enter')loginAdmin()">
+        <button class="btn primary" style="margin-top:10px;width:100%" onclick="loginAdmin()">Giriş yap</button>
+        <p id="adminError" style="display:none;color:#ffb7d5;font-size:.8rem;margin:10px 0 0">Şifre doğru değil.</p>
+      </div>
+    </div>
+    <details class="edit-panel" id="editPanel" style="display:none"><summary>✦ Siteyi kendine göre düzenle</summary><p class="edit-note"></p><div class="edit-grid">
+      <div class="field"><label for="startDate">Birlikte olmaya başladığınız tarih</label><input id="startDate" type="date"></div><div class="field"><label for="sender">İmza (senin adın)</label><input id="sender" placeholder="Örn. Tuna"></div>
+      <div class="field full"><label for="heroInput">Açılış mesajı</label><textarea id="heroInput"></textarea></div>
+      <div class="field full"><label for="futureInput">Geleceğe dair mesajın</label><textarea id="futureInput"></textarea></div>
+      <div class="field full"><label for="extraInput">Mesajın devamı</label><textarea id="extraInput"></textarea></div>
+      <div class="field"><label for="songName">Şarkı adı</label><input id="songName" placeholder="Şarkının adı"></div><div class="field"><label for="artistName">Sanatçı</label><input id="artistName" placeholder="Sanatçı adı"></div>
+      <div class="field full"><button class="btn primary" onclick="saveSettings()">Değişiklikleri kaydet</button> <button class="btn" onclick="resetSettings()">Varsayılana dön</button></div>
+    </div></details>
+  </section>
+  <footer class="footer">Gökyüzü büyük olabilir. Benim en sevdiğim yer, senin yanın. <span style="color:var(--pink)">✦</span></footer>
+</div><div class="toast" id="toast">Kaydedildi.</div>
+<script>
+const SUPABASE_URL='https://ttoanozsctmpymudncyp.supabase.co';
+const SUPABASE_KEY='sb_publishable_qCLa0hzWPzTuBOT5QaNlKQ_MQaJiETW';
+const STORAGE_BUCKET='Images';
+const MEDIA_TABLE='site_media';
+const DEFAULTS={
+ startDate:"2025-12-27", sender:"", hero:"Bazı insanlar bir yere gelmez; insanın bütün dünyasının yerini değiştirir. Bu küçük köşe, benim dünyamda açtığın yere.",
+ future:"“Geleceğin bize ne getireceğini bilmiyorum. Ama güzel günlerde de zor günlerde de birbirimizi dinlemeyi, birlikte gülmeyi ve aynı gökyüzüne bakmayı seçelim istiyorum.”",
+ extra:"Henüz yaşamadığımız onca şey var. Yeni yollar, küçük ev içi mutluluklar, ansızın gelen kahkahalar… Umarım yıllar sonra bu satırlara döndüğümüzde, yan yana oturup “Bak, daha o zaman da hayal etmişiz,” deriz.",
+ song:"Bizim şarkımız", artist:"",
+ dates:["İlk sayfa","Güzel bir gün","Bugün"],
+ titles:["Her şeyin başladığı yer","Gülüşünü hatırladığım an","Hâlâ en sevdiğim tesadüf"],
+ texts:["Belki o gün sıradan görünüyordu. Ama geriye dönüp bakınca, hikâyemizin ilk cümlesiymiş.","Bazen aklımda kalan şey ne yaptığımız değil; yanımdayken dünyanın nasıl daha hafif hissettirdiği.","Biriktirecek daha çok yerimiz, görecek daha çok manzaramız ve anlatacak daha çok hikâyemiz var."]
+};
+let settings={...DEFAULTS};let audioUrl=null;let adminAuthenticated=false;
+async function sbFetch(path,options={}) {
+ const response=await fetch(SUPABASE_URL+path,{...options,headers:{apikey:SUPABASE_KEY,Authorization:'Bearer '+SUPABASE_KEY,...(options.headers||{})}});
+ if(!response.ok){let detail='';try{detail=await response.text()}catch(e){}throw new Error('Supabase '+response.status+' '+detail.slice(0,180))}
+ const text=await response.text();if(!text.trim())return null;try{return JSON.parse(text)}catch(e){throw new Error('Supabase geçersiz yanıt döndürdü: '+text.slice(0,160))}
+}
+function safeName(name){return name.normalize('NFKD').replace(/[^a-zA-Z0-9._-]+/g,'-').replace(/^-+|-+$/g,'').slice(-100)||'media'}
+async function uploadToStorage(file,folder){
+ const path=folder+'/'+Date.now()+'-'+safeName(file.name);
+ await sbFetch('/storage/v1/object/'+encodeURIComponent(STORAGE_BUCKET)+'/'+path.split('/').map(encodeURIComponent).join('/'),{method:'POST',headers:{'Content-Type':file.type||'application/octet-stream','x-upsert':'false'},body:file});
+ return SUPABASE_URL+'/storage/v1/object/public/'+encodeURIComponent(STORAGE_BUCKET)+'/'+path.split('/').map(encodeURIComponent).join('/');
+}
+async function saveSharedMedia(key,value){
+ await sbFetch('/rest/v1/'+MEDIA_TABLE+'?on_conflict=key',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'resolution=merge-duplicates,return=minimal'},body:JSON.stringify({key,value,updated_at:new Date().toISOString()})});
+}
+async function loadSharedMedia(){
+ try{
+  const rows=await sbFetch('/rest/v1/'+MEDIA_TABLE+'?select=key,value');
+  (rows||[]).forEach(row=>{
+   const key=row.key, value=row.value;
+   if(key.startsWith('memory:')){
+    const n=Number(key.split(':')[1]);
+    if(n>=0&&n<3&&value){const label=document.querySelectorAll('.photo')[n];if(label){showMemoryImage(label,value);addDeleteButton(label,key,value,'memory')}}
+   }
+   if(key.startsWith('album:')&&value){
+    const parts=key.split(':');const target=parts[1];const grid=el(target);
+    if(grid){grid.querySelector('.album-empty')?.remove();const tile=document.createElement('div');tile.className='album-photo';const img=document.createElement('img');img.src=value;img.alt='Albüm fotoğrafı';img.loading='lazy';tile.appendChild(img);addDeleteButton(tile,key,value,'album');grid.appendChild(tile)}
+   }
+   if(key==='song'&&value?.url){el('audio').src=value.url;settings.song=value.title||DEFAULTS.song;settings.artist=value.artist||'';el('songTitle').textContent=settings.song;el('songArtist').textContent=settings.artist}
+  });
+ }catch(e){console.warn('Kalıcı medya henüz yüklenemedi:',e.message)}
+}
+function addDeleteButton(container,key,url,type){
+ if(container.querySelector('.admin-delete-photo'))return;
+ const btn=document.createElement('button');btn.type='button';btn.className='admin-delete-photo admin-only';btn.textContent='Sil';btn.title='Fotoğrafı sil';
+ btn.addEventListener('click',async ev=>{ev.preventDefault();ev.stopPropagation();if(!adminAuthenticated){showToast('Silmek için Tuna bölümünden giriş yap.');return}if(!confirm('Bu fotoğrafı kalıcı olarak kaldırmak istiyor musun?'))return;
+  try{
+   await sbFetch('/rest/v1/'+MEDIA_TABLE+'?key=eq.'+encodeURIComponent(key),{method:'DELETE',headers:{Prefer:'return=minimal'}});
+   if(type==='memory'){const img=container.querySelector('img');if(img)img.remove();const span=container.querySelector('span');if(span)span.style.display='';}
+   else{container.remove();}
+   showToast('Fotoğraf kaldırıldı.');
+  }catch(err){showToast('Fotoğraf silinemedi: '+(err.message||'İzinleri kontrol et.'));console.error(err)}
+ });
+ container.appendChild(btn);
+}
+function showMemoryImage(label,url){let img=label.querySelector('img');if(!img){img=document.createElement('img');img.alt='Yüklenen anı fotoğrafı';label.prepend(img)}img.src=url;const placeholder=label.querySelector('span');if(placeholder)placeholder.style.display='none'}
+function el(id){return document.getElementById(id)}
+function showToast(msg){const t=el('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+
+function validDate(s){
+ if(!s || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return null;
+ const parts=s.split('-').map(Number);
+ const d=new Date(parts[0],parts[1]-1,parts[2]);
+ return d.getFullYear()===parts[0] && d.getMonth()===parts[1]-1 && d.getDate()===parts[2] ? d : null;
+}
+function updateCounter(){
+ let start=validDate(settings.startDate);
+ if(!start){settings.startDate=DEFAULTS.startDate;start=validDate(DEFAULTS.startDate);}
+ const now=new Date();
+ const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+ if(!start || start>today){
+   ['days','heroDays'].forEach(id=>{const node=el(id);if(node)node.textContent='0';});
+   ['years','months','daysLeft'].forEach(id=>{const node=el(id);if(node)node.textContent='0';});
+   if(el('counterNote'))el('counterNote').textContent=start?start.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'}):'';
+   if(el('heroCounterSub'))el('heroCounterSub').textContent='Hikâyemiz yakında başlıyor.';
+   return;
+ }
+ const diff=Math.floor((today.getTime()-start.getTime())/86400000);
+ let y=today.getFullYear()-start.getFullYear();
+ let m=today.getMonth()-start.getMonth();
+ let d=today.getDate()-start.getDate();
+ if(d<0){m--;d+=new Date(today.getFullYear(),today.getMonth(),0).getDate();}
+ if(m<0){y--;m+=12;}
+ if(el('days'))el('days').textContent=diff.toLocaleString('tr-TR');
+ if(el('years'))el('years').textContent=String(y);
+ if(el('months'))el('months').textContent=String(m);
+ if(el('daysLeft'))el('daysLeft').textContent=String(d);
+ if(el('counterNote'))el('counterNote').textContent=start.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
+ if(el('heroDays'))el('heroDays').textContent=diff.toLocaleString('tr-TR');
+ if(el('heroCounterSub'))el('heroCounterSub').textContent='Ve hikâyemiz hâlâ yazılıyor…';
+}
+function render(){el('heroText').textContent=settings.hero;el('futureMessage').textContent=settings.future;el('futureExtra').textContent=settings.extra;el('signature').textContent=settings.sender?'Seni seven, '+settings.sender+'.':'Seni seven, ben.';el('songTitle').textContent=settings.song||'Bizim şarkımız';el('songArtist').textContent=settings.artist||'Şarkımızın sanatçısı';for(let i=0;i<3;i++){document.querySelector(`[data-edit="date${i+1}"]`).textContent=settings.dates[i];document.querySelector(`[data-edit="title${i+1}"]`).textContent=settings.titles[i];document.querySelector(`[data-edit="text${i+1}"]`).textContent=settings.texts[i]}el('startDate').value=settings.startDate;el('sender').value=settings.sender;el('heroInput').value=settings.hero;el('futureInput').value=settings.future;el('extraInput').value=settings.extra;el('songName').value=settings.song;el('artistName').value=settings.artist;updateCounter()}
+function saveSettings(){settings.startDate=validDate(el('startDate').value)?el('startDate').value:DEFAULTS.startDate;settings.sender=el('sender').value.trim();settings.hero=el('heroInput').value.trim()||DEFAULTS.hero;settings.future=el('futureInput').value.trim()||DEFAULTS.future;settings.extra=el('extraInput').value.trim()||DEFAULTS.extra;settings.song=el('songName').value.trim()||DEFAULTS.song;settings.artist=el('artistName').value.trim()||DEFAULTS.artist;try{localStorage.setItem('damlaSiteSettings',JSON.stringify(settings))}catch(e){}render();showToast('Değişikliklerin kaydedildi.')}
+function resetSettings(){if(!confirm('Metin ayarları varsayılana dönsün mü?'))return;settings={...DEFAULTS};try{localStorage.removeItem('damlaSiteSettings')}catch(e){}render();showToast('Varsayılan metinler geri yüklendi.')}
+async function openPhotoViewer(src, caption){
+ if(!src)return;
+ const viewer=el('photoViewer'), img=el('photoViewerImg'), cap=el('photoViewerCaption');
+ img.src=src;cap.textContent=caption||'Birlikte bir anımız';
+ viewer.classList.add('open');document.body.style.overflow='hidden';
+}
+function closePhotoViewer(event){
+ if(event && event.target && !event.target.classList.contains('photo-viewer'))return;
+ const viewer=el('photoViewer');viewer.classList.remove('open');document.body.style.overflow='';
+ el('photoViewerImg').src='';
+}
+document.addEventListener('keydown',function(event){if(event.key==='Escape'){const v=el('photoViewer');if(v&&v.classList.contains('open'))closePhotoViewer();}});
+document.addEventListener('click',function(event){
+ const tile=event.target.closest('.album-photo, .photo');
+ if(!tile)return;
+ if(event.target.closest('input'))return;
+ const img=tile.matches('.photo')?tile.querySelector('img'):tile.querySelector('img');
+ if(img&&img.src&&img.getAttribute('src')){event.preventDefault();openPhotoViewer(img.src,img.alt||'Birlikte bir anımız');}
+});
+async function loadPhoto(input){
+ if(!adminAuthenticated){input.value='';showToast('Fotoğraf eklemek için önce Tuna bölümünden giriş yap.');return}
+ const file=input.files&&input.files[0];if(!file)return;
+ if(!file.type.startsWith('image/')){showToast('Lütfen bir görsel dosyası seç.');input.value='';return}
+ const label=input.closest('.photo');
+ try{
+  showToast('Fotoğraf yükleniyor…');
+  const url=await uploadToStorage(file,'memories');
+  await saveSharedMedia('memory:'+Array.from(document.querySelectorAll('.photo')).indexOf(label),url);
+  showMemoryImage(label,url);addDeleteButton(label,'memory:'+Array.from(document.querySelectorAll('.photo')).indexOf(label),url,'memory');
+  showToast('Fotoğraf kaydedildi ve gösteriliyor.');
+ }catch(e){showToast('Fotoğraf yüklenemedi: '+(e.message||'Bağlantıyı kontrol et.'));console.error('Fotoğraf yükleme hatası:',e)}
+ finally{input.value=''}
+}
+async function loadAlbum(input,targetId){
+ if(!adminAuthenticated){input.value='';showToast('Albüm fotoğrafı eklemek için önce Tuna bölümünden giriş yap.');return}
+ const files=Array.from(input.files||[]);if(!files.length)return;const grid=el(targetId);if(!grid){showToast('Albüm alanı bulunamadı.');return}
+ try{
+  showToast('Fotoğraflar yükleniyor…');
+  for(const file of files){
+   if(!file.type.startsWith('image/'))continue;
+   const url=await uploadToStorage(file,'albums');
+   const key='album:'+targetId+':'+Date.now()+'-'+Math.random().toString(36).slice(2,7);
+   await saveSharedMedia(key,url);
+   grid.querySelector('.album-empty')?.remove();
+   const tile=document.createElement('div');tile.className='album-photo';
+   const img=document.createElement('img');img.alt='Albüm fotoğrafı';img.loading='lazy';img.src=url;
+   img.onerror=()=>{img.alt='Fotoğraf yüklenemedi';console.error('Fotoğraf URL açılamadı:',url)};
+   tile.appendChild(img);addDeleteButton(tile,key,url,'album');grid.appendChild(tile);
+  }
+  showToast('Fotoğraflar kaydedildi ve albüme eklendi.');
+ }catch(e){showToast('Yükleme başarısız: '+(e.message||'Supabase izinlerini kontrol et.'));console.error('Albüm yükleme hatası:',e)}
+ finally{input.value=''}
+}
+async function loadAudio(input){if(!adminAuthenticated){input.value='';showToast('Şarkı değiştirmek için önce Tuna bölümünden giriş yap.');return}const file=input.files&&input.files[0];if(!file)return;if(!file.type.startsWith('audio/')){showToast('Lütfen bir ses dosyası seç.');return}try{showToast('Şarkı yükleniyor…');const url=await uploadToStorage(file,'music');const title=file.name.replace(/\.[^.]+$/,'');await saveSharedMedia('song',{url,title,artist:settings.artist||''});const audio=el('audio');audio.src=url;audio.loop=true;settings.song=title;el('songTitle').textContent=title;el('songArtist').textContent=settings.artist||'Bizim şarkımız';el('playBtn').textContent='▶ Dinle';showToast('Şarkı kalıcı kaydedildi. Dinlemek için dokun.')}catch(e){showToast('Şarkı yüklenemedi. Storage izinlerini kontrol et.');console.error(e)}}
+function toggleMusic(){const a=el('audio');if(!a.src){showToast('Önce bir şarkı seç.');return}if(a.paused){a.play().then(()=>{el('playBtn').textContent='Ⅱ Duraklat';el('record').style.animation='spin 4s linear infinite'}).catch(()=>showToast('Bu dosya oynatılamadı; başka bir ses dosyası dene.'))}else{a.pause();el('playBtn').textContent='▶ Dinle';el('record').style.animation='none'}}
+function stopMusic(){const a=el('audio');a.pause();a.currentTime=0;el('playBtn').textContent='▶ Dinle';el('record').style.animation='none'}
+const style=document.createElement('style');style.textContent='@keyframes spin{to{transform:rotate(360deg)}}';document.head.appendChild(style);
+function toggleAdmin(){if(adminAuthenticated){adminAuthenticated=false;document.body.classList.remove('admin-mode');el('editPanel').style.display='none';el('adminToggle').textContent='Tuna';showToast('Yönetici oturumu kapatıldı.');return}const box=el('adminLogin');box.style.display=box.style.display==='none'?'block':'none';if(box.style.display==='block')el('adminPassword').focus()}
+function loginAdmin(){if(el('adminPassword').value==='2712'){adminAuthenticated=true;document.body.classList.add('admin-mode');el('editPanel').style.display='block';el('adminLogin').style.display='none';el('adminError').style.display='none';el('adminToggle').textContent='Tuna · Düzenleme açık';el('editPanel').open=true;showToast('Düzenleme alanı açıldı.')}else{el('adminError').style.display='block';el('adminPassword').value='';el('adminPassword').focus()}}
+try{
+ const saved=localStorage.getItem('damlaSiteSettings');
+ if(saved)settings={...DEFAULTS,...JSON.parse(saved)};
+ if(!validDate(settings.startDate))settings.startDate=DEFAULTS.startDate;
+}catch(e){settings={...DEFAULTS};}
+render();
+if(window.__damlaCounterTimer)clearInterval(window.__damlaCounterTimer);
+window.__damlaCounterTimer=setInterval(updateCounter,60000);
+// Sayfa açılınca Supabase'de saklanan fotoğrafları ve şarkıyı geri yükle.
+loadSharedMedia();
+el('audio').addEventListener('ended',()=>{el('playBtn').textContent='▶ Dinle';el('record').style.animation='none'});
+</script>
+</body>
+</html>
