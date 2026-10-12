@@ -462,71 +462,54 @@ el('audio').addEventListener('ended',()=>{el('playBtn').textContent='▶ Dinle';
 <div id="love-song-overlay" aria-hidden="true">
  <button class="love-close" type="button" onclick="closeLoveSongOverlay()">Kapat ×</button>
  <div class="story-heading"><small>Birlikte büyüyen bir hikâye</small><strong>Bir tohum, iki kalp</strong><span id="story-subtitle">Her şey küçücük bir tohumla başladı.</span></div>
- <svg class="story-svg" viewBox="0 0 800 900" preserveAspectRatio="xMidYMid meet" aria-label="Kadın ve erkeğin birlikte lale yetiştirme hikâyesi">
-  <defs><linearGradient id="story-pot" x1="0" x2="1"><stop stop-color="#51416e"/><stop offset=".5" stop-color="#9581b5"/><stop offset="1" stop-color="#55436f"/></linearGradient>
-   <g id="little-tulip"><path d="M0 0 Q-2 -22 0 -39" class="draw" style="stroke:#91c49c"/><path d="M0 -15 Q-22 -28 -20 -11 Q-9 -7 0 -15Z" class="leaf"/><path d="M0 -26 Q18 -42 20 -24 Q10 -16 0 -26Z" class="leaf"/><path d="M0 -39 Q-15 -52 -11 -63 Q-2 -60 0 -47 Q7 -64 16 -58 Q19 -46 0 -39Z" class="petal"/></g>
-  </defs>
-  <!-- ground and pot -->
-  <path d="M55 700 Q400 680 745 700" class="softline" opacity=".65"/>
-  <g id="pot"><path d="M322 654 L340 756 Q400 775 460 756 L478 654Z" fill="url(#story-pot)" stroke="#ded2ff" stroke-width="2"/><ellipse cx="400" cy="655" rx="79" ry="17" fill="#bba9d0" stroke="#e8ddff" stroke-width="2"/><ellipse cx="400" cy="653" rx="69" ry="10" fill="#3d2b52"/><path d="M347 684 Q400 699 453 684" class="softline"/></g>
-  <!-- man on left -->
-  <g id="man" class="person">
-   <path d="M174 352 Q160 316 180 286 Q204 260 236 281 Q260 301 249 347Z" fill="#c5b3e8" stroke="#eee4ff" stroke-width="2"/><path d="M174 316 Q175 271 212 271 Q246 270 257 311 Q230 288 215 287 Q199 311 174 316Z" class="hair-m"/><path d="M193 322 l9 1 M226 322 l9 -1 M211 324 l-4 12 7 1 M202 344 Q215 351 229 343" class="softline"/>
-   <path d="M177 365 Q213 350 247 367 L269 485 Q216 507 160 485Z" class="cloth-m"/><path d="M178 383 Q151 424 174 454 L213 483 M247 382 Q266 416 251 446 L218 481" class="draw"/><path d="M175 486 L168 624 M250 486 L258 624" class="draw"/><path d="M151 632 Q174 615 194 632 L197 642 L145 642Z M239 632 Q258 615 275 633 L282 642 L235 642Z" class="draw"/>
-   <path id="man-arm" d="M249 395 Q267 438 298 477 Q325 510 368 530" class="draw arm"/>
-  </g>
-  <!-- woman on right -->
-  <g id="woman" class="person">
-   <path d="M550 351 Q530 309 551 282 Q579 257 610 282 Q631 306 617 349Z" fill="#e8b5d6" stroke="#ffe5f4" stroke-width="2"/><path d="M546 319 Q534 278 568 267 Q601 255 623 288 L633 350 Q615 325 604 293 Q578 318 546 309Z" class="hair-w"/><path d="M562 322 l9 1 M595 322 l9 -1 M581 325 l-4 11 7 1 M572 344 Q585 351 599 343" class="softline"/>
-   <path d="M540 366 Q580 350 616 368 L640 485 Q584 507 529 485Z" class="cloth-w"/><path d="M540 383 Q518 418 537 449 L575 482 M615 383 Q643 418 622 449 L585 482" class="draw"/><path d="M540 486 L533 624 M615 486 L625 624" class="draw"/><path d="M514 632 Q533 615 551 632 L554 642 L507 642Z M609 632 Q627 615 645 633 L652 642 L605 642Z" class="draw"/>
-   <path id="woman-arm" d="M540 395 Q520 438 495 476 Q466 507 431 530" class="draw arm"/>
-  </g>
-  <!-- seed -->
-  <g id="seed" class="scene-part on"><ellipse cx="400" cy="649" rx="7" ry="4" fill="#e5c19a" stroke="#fff0d4" stroke-width="1.3"/><path d="M397 649 l5 -2" class="softline"/></g>
-  <!-- sprout -->
-  <g id="sprout" class="scene-part"><path d="M400 650 Q395 628 400 604 Q404 593 412 590" fill="none" stroke="#9acaa0" stroke-width="4" stroke-linecap="round"/><path d="M400 628 Q377 621 378 601 Q396 602 400 628Z" class="leaf"/><path d="M403 608 Q424 597 425 578 Q407 583 403 608Z" class="leaf"/></g>
-  <!-- grown stem -->
-  <g id="grown" class="scene-part"><path d="M400 650 C396 603 404 563 400 523 C398 496 402 476 400 454" fill="none" stroke="#9acaa0" stroke-width="4.5" stroke-linecap="round"/><path d="M400 610 Q355 588 356 551 Q390 556 400 610Z M401 576 Q444 551 449 515 Q414 527 401 576Z M400 535 Q374 514 380 490 Q400 497 400 535Z" class="leaf"/></g>
-  <g id="watering" class="scene-part"><g id="watering-can"><path d="M300 493 Q317 480 339 493 L336 514 Q317 522 302 513Z" fill="#b6c2dc" stroke="#e8e0ff" stroke-width="2"/><path d="M339 496 L355 483 L362 488 L339 504 M303 494 Q282 481 282 500 Q285 513 301 511" class="draw"/><path d="M363 490 Q370 500 364 507 Q357 509 358 501Z" fill="#91d1ed"/><path d="M370 501 Q378 511 372 518" class="softline"/></g></g>
-  <g id="rain" class="scene-part"><path d="M271 310 Q251 286 275 267 Q290 240 314 256 Q335 233 355 255 Q381 247 389 277 Q399 303 369 311Z" fill="#77719f" stroke="#c5b9ed" stroke-width="2"/><g stroke="#9ebde9" stroke-width="2" stroke-linecap="round"><line x1="290" y1="324" x2="280" y2="347"/><line x1="323" y1="326" x2="313" y2="349"/><line x1="357" y1="323" x2="347" y2="346"/><line x1="391" y1="326" x2="381" y2="349"/><line x1="425" y1="324" x2="415" y2="347"/><line x1="459" y1="326" x2="449" y2="349"/><line x1="493" y1="324" x2="483" y2="347"/><line x1="524" y1="326" x2="514" y2="349"/></g></g>
-  <g id="umbrella" class="scene-part"><path d="M316 386 Q400 294 484 386 Q460 373 444 386 Q422 371 400 386 Q378 371 356 386Z" fill="#8f78c5" stroke="#e7dcff" stroke-width="2.5"/><path d="M400 386 L400 451 Q400 464 411 458" class="draw"/><path d="M356 386 Q378 365 400 386 Q422 365 444 386" class="softline"/></g>
-  <g id="bud" class="scene-part"><path d="M400 455 Q365 427 379 397 Q393 406 400 425 Q409 400 428 397 Q441 429 400 455Z" class="petal"/></g>
-  <g id="flower" class="scene-part"><g class="bloom"><path d="M400 458 Q350 430 362 389 Q383 398 400 427 Q406 384 431 383 Q450 425 400 458Z" class="petal"/><path d="M400 458 Q376 420 390 388 Q405 406 400 458Z" fill="#f1c1dc" stroke="#ffe5f4" stroke-width="1.5"/><path d="M400 458 Q428 421 440 396 Q455 430 400 458Z" fill="#ce83b4" stroke="#ffe5f4" stroke-width="1.5"/><path d="M400 454 L400 406" class="softline"/></g></g>
-  <g id="garden" class="scene-part"><use href="#little-tulip" transform="translate(90 685) scale(1.1)" class="falling-petal"/><use href="#little-tulip" transform="translate(165 730) scale(.75)"/><use href="#little-tulip" transform="translate(255 684) scale(.95)"/><use href="#little-tulip" transform="translate(535 686) scale(1.05)"/><use href="#little-tulip" transform="translate(635 729) scale(.8)"/><use href="#little-tulip" transform="translate(710 681) scale(1.15)"/><use href="#little-tulip" transform="translate(100 520) scale(.62)"/><use href="#little-tulip" transform="translate(700 510) scale(.68)"/><use href="#little-tulip" transform="translate(190 430) scale(.55)"/><use href="#little-tulip" transform="translate(615 422) scale(.58)"/><use href="#little-tulip" transform="translate(250 335) scale(.46)"/><use href="#little-tulip" transform="translate(560 330) scale(.5)"/></g>
-  <g id="petals" class="scene-part"><path class="petal falling-petal" d="M0 0 Q-13 -10 -4 -23 Q9 -15 0 0Z" transform="translate(270 260)"/><path class="petal falling-petal" d="M0 0 Q-13 -10 -4 -23 Q9 -15 0 0Z" transform="translate(525 285)" style="animation-delay:-2s"/><path class="petal falling-petal" d="M0 0 Q-13 -10 -4 -23 Q9 -15 0 0Z" transform="translate(320 450)" style="animation-delay:-3s"/></g>
- </svg>
+ <canvas id="storyCanvas" class="story-svg" style="display:block" aria-label="Canvas 2D ile çizilmiş, birlikte lale yetiştiren iki kişinin hikâyesi"></canvas>
  <div class="story-caption" id="story-caption">Her şey küçücük bir tohumla başladı.</div>
  <div class="love-note" id="story-ending"><strong>Birlikte büyüttük.</strong><span>En güzel şeyler, birlikte emek verince çiçek açar.</span><button class="restart-story" onclick="showLoveSongOverlay()">Hikâyeyi yeniden izle</button></div>
 </div>
 
 <script>
 (function(){
- let timers=[];
- const byId=id=>document.getElementById(id);
- const scenes=['sprout','grown','bud','flower','rain','umbrella','watering','garden','petals'];
- function later(sec,fn){timers.push(setTimeout(fn,sec*1000));}
- function on(id){const n=byId(id);if(n)n.classList.add('on');}
- function off(id){const n=byId(id);if(n)n.classList.remove('on');}
- function caption(text){byId('story-subtitle').textContent=text;byId('story-caption').textContent=text;}
- window.closeLoveSongOverlay=function(){const o=byId('love-song-overlay');if(!o)return;o.classList.remove('active');o.setAttribute('aria-hidden','true');timers.forEach(clearTimeout);timers=[];};
- window.showLoveSongOverlay=function(){
-  const o=byId('love-song-overlay');if(!o)return;
-  timers.forEach(clearTimeout);timers=[];scenes.forEach(off);off('story-ending');byId('story-ending').classList.remove('visible');
-  o.classList.add('active');o.setAttribute('aria-hidden','false');caption('Her şey küçücük bir tohumla başladı.');
-  later(3,()=>caption('Diz çöküp toprağı birlikte hazırladılar.'));
-  later(4.5,()=>caption('Küçücük tohumu aynı umutla örttüler.'));
-  later(5,()=>{caption('İlk filiz, sabırla gün ışığına uzandı.');on('sprout');});
-  later(9,()=>{caption('Birlikte suladılar; her damla bir umuttu.');on('grown');on('watering');});
-  later(13,()=>{off('watering');caption('Her gün biraz daha büyüdü.');on('bud');});
-  later(17,()=>{caption('Sonra gökyüzü karardı, yağmur başladı.');on('rain');});
-  later(20,()=>{caption('Şemsiyeyi birlikte tutup filizi korudular.');on('umbrella');});
-  later(23,()=>caption('Yağmurun altında bile ellerini bırakmadılar.'));
-  later(25,()=>{off('rain');off('umbrella');caption('Yağmur dindi. Küçük lale artık hazırdı.');});
-  later(28,()=>{caption('Emek verdikleri çiçek sonunda açtı.');on('flower');});
-  later(32,()=>{caption('Bir çiçek, birlikte büyüyen bir bahçeye dönüştü.');on('garden');on('petals');});
-  later(35,()=>{byId('story-ending').classList.add('visible');});
- };
- document.addEventListener('click',function(event){const target=event.target&&event.target.closest?event.target.closest('#playBtn, .play-btn, [data-action="play-song"]'):null;if(!target)return;const audio=byId('audio');if(audio&&!audio.paused)window.showLoveSongOverlay();else if(audio)setTimeout(()=>{if(!audio.paused)window.showLoveSongOverlay();},180);});
+ const canvas=document.getElementById('storyCanvas'),ctx=canvas.getContext('2d');
+ const overlay=document.getElementById('love-song-overlay'); let raf=0,started=0,active=false;
+ const captions=[
+ [0,'Her şey küçücük bir tohumla başladı.'],[3,'Diz çöküp toprağı birlikte hazırladılar.'],[4.5,'Küçücük tohumu aynı umutla örttüler.'],[5,'İlk filiz, sabırla gün ışığına uzandı.'],[9,'Birlikte suladılar; her damla bir umuttu.'],[13,'Her gün biraz daha büyüdü.'],[17,'Sonra gökyüzü karardı, yağmur başladı.'],[20,'Şemsiyeyi birlikte tutup filizi korudular.'],[23,'Yağmurun altında bile ellerini bırakmadılar.'],[25,'Yağmur dindi. Küçük lale artık hazırdı.'],[28,'Emek verdikleri çiçek sonunda açtı.'],[32,'Bir çiçek, birlikte büyüyen bir bahçeye dönüştü.']
+ ];
+ function resize(){const dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.max(1,innerWidth*dpr);canvas.height=Math.max(1,innerHeight*dpr);ctx.setTransform(dpr,0,0,dpr,0,0)}addEventListener('resize',resize);resize();
+ function line(points,color='#e9ddff',width=3){ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke()}
+ function person(x,y,scale,female,t){ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);let lean=Math.sin(t*1.3+(female?1:0))*.025;ctx.rotate(lean);
+ ctx.fillStyle=female?'#e5a9d0':'#bba9e7';ctx.strokeStyle='#f3eaff';ctx.lineWidth=2.5;
+ ctx.beginPath();ctx.ellipse(0,-98,24,29,0,0,Math.PI*2);ctx.fill();ctx.stroke();
+ ctx.fillStyle=female?'#4b2d54':'#392b43';ctx.beginPath();ctx.arc(0,-106,26,Math.PI,Math.PI*2);ctx.lineTo(25,-91);ctx.quadraticCurveTo(16,-96,14,-113);ctx.quadraticCurveTo(-3,-94,-25,-100);ctx.closePath();ctx.fill();
+ ctx.fillStyle=female?'#c18bbd':'#9b8ac8';ctx.beginPath();ctx.moveTo(-25,-63);ctx.quadraticCurveTo(0,-76,25,-63);ctx.lineTo(31,-4);ctx.quadraticCurveTo(0,7,-31,-4);ctx.closePath();ctx.fill();ctx.stroke();
+ line([[-15,-4],[-20,39],[-21,67]],'#e9ddff',4);line([[15,-4],[20,39],[21,67]],'#e9ddff',4);
+ let reach=Math.min(1,Math.max(0,(t-1)/7));line([[-20,-54],[-35,-32],[-20+reach*45,-18+reach*25]],'#e9ddff',4);line([[20,-54],[34,-31],[20-reach*25,-12+reach*22]],'#e9ddff',4);
+ ctx.restore()}
+ function tulip(x,base,h,bloom,t){ctx.save();ctx.translate(x,base);const grow=Math.min(1,Math.max(0,(t-4.5)/6));h*=grow;ctx.strokeStyle='#91c89f';ctx.lineWidth=5;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(0,0);ctx.quadraticCurveTo(-5,-h*.48,0,-h);ctx.stroke();
+ if(grow>.18){ctx.fillStyle='#83b98f';ctx.beginPath();ctx.moveTo(0,-h*.3);ctx.quadraticCurveTo(-38,-h*.35,-31,-h*.62);ctx.quadraticCurveTo(-8,-h*.57,0,-h*.3);ctx.fill();ctx.beginPath();ctx.moveTo(0,-h*.55);ctx.quadraticCurveTo(34,-h*.62,34,-h*.83);ctx.quadraticCurveTo(8,-h*.78,0,-h*.55);ctx.fill()}
+ const b=Math.min(1,Math.max(0,(t-26)/4));if(bloom&&grow>.7){ctx.translate(0,-h);ctx.scale(.25+.75*b, .25+.75*b);ctx.fillStyle='#e6a2d0';ctx.strokeStyle='#f8d9ef';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,0);ctx.quadraticCurveTo(-30,-15,-23,-48);ctx.quadraticCurveTo(-8,-44,0,-20);ctx.quadraticCurveTo(5,-55,25,-48);ctx.quadraticCurveTo(35,-16,0,0);ctx.fill();ctx.stroke();ctx.fillStyle='#f4c3e1';ctx.beginPath();ctx.moveTo(0,0);ctx.quadraticCurveTo(-7,-31,0,-53);ctx.quadraticCurveTo(12,-29,0,0);ctx.fill();ctx.stroke()}
+ ctx.restore()}
+ function draw(t){const w=innerWidth,h=innerHeight;ctx.clearRect(0,0,w,h);const scale=Math.min(w/800,h/900),ox=(w-800*scale)/2,oy=(h-900*scale)/2;ctx.save();ctx.translate(ox,oy);ctx.scale(scale,scale);
+ // pencil-sketched horizon and planter
+ ctx.strokeStyle='#d9cafa';ctx.globalAlpha=.5;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(55,700);ctx.quadraticCurveTo(400,681,745,700);ctx.stroke();ctx.globalAlpha=1;
+ ctx.fillStyle='#55436f';ctx.strokeStyle='#e1d5ff';ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(322,654);ctx.lineTo(340,756);ctx.quadraticCurveTo(400,775,460,756);ctx.lineTo(478,654);ctx.closePath();ctx.fill();ctx.stroke();ctx.fillStyle='#bba9d0';ctx.beginPath();ctx.ellipse(400,655,79,17,0,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.fillStyle='#3d2b52';ctx.beginPath();ctx.ellipse(400,653,69,10,0,0,Math.PI*2);ctx.fill();
+ person(215,570,.9,false,t);person(585,570,.9,true,t);
+ // hands move together to plant and care for the seed
+ const reach=Math.min(1,Math.max(0,(t-1)/5));line([[235,515],[280,545],[340+reach*35,605]],'#eee4ff',4);line([[565,515],[520,545],[460-reach*35,605]],'#eee4ff',4);
+ ctx.fillStyle='#e5c19a';ctx.beginPath();ctx.ellipse(400,649,7,4,0,0,Math.PI*2);ctx.fill();
+ tulip(400,650,175,t>26,t);
+ // watering can and animated water drops
+ if(t>8&&t<14){ctx.fillStyle='#b6c2dc';ctx.strokeStyle='#eee4ff';ctx.lineWidth=2;ctx.beginPath();ctx.roundRect(290,500,43,29,7);ctx.fill();ctx.stroke();line([[330,505],[355,492],[361,498]],'#eee4ff',3);for(let i=0;i<4;i++){let yy=535+((t*35+i*15)%55);ctx.fillStyle='#9bd8f4';ctx.beginPath();ctx.ellipse(365+i*8,yy,2.5,5,0,0,Math.PI*2);ctx.fill()}}
+ if(t>16&&t<25){ctx.fillStyle='#8274a9';ctx.strokeStyle='#e7dcff';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(305,390);ctx.quadraticCurveTo(400,300,495,390);ctx.quadraticCurveTo(470,380,450,390);ctx.quadraticCurveTo(425,377,400,390);ctx.quadraticCurveTo(375,377,350,390);ctx.closePath();ctx.fill();ctx.stroke();line([[400,390],[400,452],[412,459]],'#eee4ff',3);for(let i=0;i<20;i++){let x=250+(i*47)%300,y=405+((t*90+i*37)%220);line([[x,y],[x-6,y+14]],'#9ebde9',1.8)}}
+ if(t>31){for(let i=0;i<6;i++)tulip(95+i*120,700+(i%2)*20,70+(i%3)*15,true,t)}
+ // tiny floating dust and stars
+ for(let i=0;i<24;i++){let x=(i*137+Math.sin(t*.3+i)*12)%800,y=(i*79-t*7+9000)%900;ctx.globalAlpha=.25+.3*Math.sin(t+i);ctx.fillStyle='#f2eaff';ctx.beginPath();ctx.arc(x,y,1.5,0,Math.PI*2);ctx.fill()}ctx.globalAlpha=1;ctx.restore();
+ let text=captions[0][1];for(const c of captions){if(t>=c[0])text=c[1]}document.getElementById('story-subtitle').textContent=text;document.getElementById('story-caption').textContent=text;
+ if(t>=35){document.getElementById('story-ending').classList.add('visible')}else document.getElementById('story-ending').classList.remove('visible');if(active)raf=requestAnimationFrame(tick)
+ }
+ function tick(now){draw((now-started)/1000)}
+ window.closeLoveSongOverlay=function(){active=false;cancelAnimationFrame(raf);overlay.classList.remove('active');overlay.setAttribute('aria-hidden','true');document.getElementById('story-ending').classList.remove('visible')};
+ window.showLoveSongOverlay=function(){cancelAnimationFrame(raf);active=true;started=performance.now();overlay.classList.add('active');overlay.setAttribute('aria-hidden','false');draw(0);raf=requestAnimationFrame(tick)};
+ document.addEventListener('click',function(e){const target=e.target&&e.target.closest?e.target.closest('#playBtn, .play-btn, [data-action="play-song"]'):null;if(!target)return;const audio=document.getElementById('audio');if(audio&&!audio.paused)window.showLoveSongOverlay();else if(audio)setTimeout(()=>{if(!audio.paused)window.showLoveSongOverlay()},180)});
 })();
 </script>
 
@@ -549,13 +532,15 @@ el('audio').addEventListener('ended',()=>{el('playBtn').textContent='▶ Dinle';
  {k:'BÖLÜM IV · YAĞMUR',t:'Şemsiyenin altında',l:'Rüzgârın karşısında',lt:'Bir akşam gökyüzü karardı ve yağmur başladı.',p:'Şemsiyeyi filizin üzerine birlikte kaldırdılar. Omuzları ıslandı, elleri birbirine değdi. Çiçek henüz açmamıştı; ama artık tek başına da değildi.',art:'rain'},
  {k:'BÖLÜM V · ÇİÇEK',t:'Erken gelen çiçek',l:'Beklenen renk',lt:'Yağmur dindiğinde, tomurcuk güneşe döndü.',p:'Yapraklar ağır ağır açıldı. Sonra bir lale daha, ardından bir başkası… Bahçe renklerle doldu. Onlar bir çiçek yetiştirdiklerini sanmışlardı; oysa birlikte büyümeyi öğrenmişlerdi.',art:'bloom'}
  ];
- let page=0;const by=id=>document.getElementById(id);
- window.openEarlyBook=function(){page=0;renderPage();by('earlyBook').classList.add('open');by('earlyBook').setAttribute('aria-hidden','false');by('bookReader').classList.remove('zooming');void by('bookReader').offsetWidth;by('bookReader').classList.add('zooming')};
- window.closeEarlyBook=function(){by('earlyBook').classList.remove('open');by('earlyBook').setAttribute('aria-hidden','true')};
+ let page=0;let bookTimer=null;let bookRunId=0;const PAGE_DURATION=6500;const by=id=>document.getElementById(id);
+ function stopBookTimer(){if(bookTimer!==null){clearTimeout(bookTimer);bookTimer=null}}
+ function scheduleBookTurn(runId){stopBookTimer();bookTimer=setTimeout(()=>{if(runId!==bookRunId||!by('earlyBook').classList.contains('open'))return;if(page<pages.length-1){turnBook(1);scheduleBookTurn(runId)}else{readBookAloud()}},PAGE_DURATION)}
+ window.openEarlyBook=function(){stopBookTimer();bookRunId++;page=0;renderPage();by('earlyBook').classList.add('open');by('earlyBook').setAttribute('aria-hidden','false');by('bookReader').classList.remove('zooming');void by('bookReader').offsetWidth;by('bookReader').classList.add('zooming');scheduleBookTurn(bookRunId)};
+ window.closeEarlyBook=function(){stopBookTimer();bookRunId++;by('earlyBook').classList.remove('open');by('earlyBook').setAttribute('aria-hidden','true')};
  function renderPage(){const p=pages[page];by('bookKicker').textContent=p.k;by('bookTitle').textContent=p.t;by('bookText').textContent=p.p;by('bookFolio').textContent=String(page*2+2).padStart(2,'0');by('bookLeftTitle').textContent=p.l;by('bookLeftText').textContent=p.lt;by('bookPrev').style.visibility=page===0?'hidden':'visible';by('bookNext').textContent=page===pages.length-1?'Son bölüme geç →':'Sonraki sayfa →';by('bookRead').style.display=page===pages.length-1?'inline-block':'none';by('bookArt').innerHTML=artFor(p.art);}
  function artFor(kind){let top='<path class="ink" d="M15 185 Q150 176 285 185"/><path class="pencil" d="M40 191q35 -10 70 0t70 0t70 0"/>';if(kind==='seed')return top+'<ellipse cx="150" cy="177" rx="8" ry="4" fill="#b99472" stroke="#725b4e"/><path class="ink" d="M60 125q20 -25 45 0t45 0t45 0t45 0"/><path class="pencil" d="M80 150q30 12 60 0t60 0"/>';if(kind==='sprout')return top+'<path class="green" d="M150 177q-8 -38 0 -67q2 -12 11 -18"/><path class="green" d="M150 143q-39 -5 -38 -36q30 0 38 36Z"/><path class="green" d="M152 124q34 -10 37 -39q-30 5 -37 39Z"/><ellipse cx="150" cy="177" rx="8" ry="4" fill="#b99472" stroke="#725b4e"/>';if(kind==='grown')return top+'<path class="green" d="M150 177q-7 -55 0 -105"/><path class="green" d="M150 148q-50 -10 -50 -47q39 5 50 47Z"/><path class="green" d="M151 126q41 -18 44 -55q-34 9 -44 55Z"/><path class="pink" d="M150 72q-28 -21 -17 -43q12 6 17 21q8 -28 25 -20q12 22 -25 42Z"/>';if(kind==='rain')return top+'<path class="ink" d="M48 91q-6 -23 18 -27q15 -27 36 -7q22 -8 28 14q2 21 -20 22Z"/><path class="pencil" d="M65 108l-8 20m28 -20l-8 20m28 -20l-8 20"/><path class="green" d="M150 177q-7 -45 0 -79"/><path class="ink" d="M105 75q45 -45 90 0q-18 -9 -30 0q-15 -10 -30 0q-15 -10 -30 0Z M150 75v65"/>';return top+'<path class="green" d="M150 177q-7 -55 0 -105"/><path class="green" d="M150 149q-49 -16 -48 -51q39 5 48 51Z"/><path class="green" d="M151 128q43 -19 45 -55q-34 8 -45 55Z"/><path class="pink" d="M150 74q-38 -25 -25 -58q15 7 25 32q10 -38 31 -30q18 30 -31 56Z"/><path class="pink" d="M150 74q-12 -36 0 -56q17 23 0 56Z"/>';}
- window.turnBook=function(dir){if(dir>0&&page<pages.length-1)page++;else if(dir<0&&page>0)page--;else if(dir>0&&page===pages.length-1){readBookAloud();return}by('bookTurn').classList.remove('turning');void by('bookTurn').offsetWidth;by('bookTurn').classList.add('turning');by('bookReader').classList.remove('zooming');renderPage();void by('bookReader').offsetWidth;by('bookReader').classList.add('zooming')};
- window.readBookAloud=function(){closeEarlyBook();const audio=by('audio');if(audio&&audio.src){audio.play().then(()=>{by('playBtn').textContent='Ⅱ Duraklat';by('record').style.animation='spin 4s linear infinite'}).catch(()=>{});}if(typeof window.showLoveSongOverlay==='function')window.showLoveSongOverlay();};
+ window.turnBook=function(dir){if(dir>0&&page<pages.length-1)page++;else if(dir<0&&page>0)page--;else if(dir>0&&page===pages.length-1){readBookAloud();return}by('bookTurn').classList.remove('turning');void by('bookTurn').offsetWidth;by('bookTurn').classList.add('turning');by('bookReader').classList.remove('zooming');renderPage();void by('bookReader').offsetWidth;by('bookReader').classList.add('zooming');if(by('earlyBook').classList.contains('open'))scheduleBookTurn(bookRunId)};
+ window.readBookAloud=function(){stopBookTimer();closeEarlyBook();const audio=by('audio');if(audio&&audio.src){audio.play().then(()=>{by('playBtn').textContent='Ⅱ Duraklat';by('record').style.animation='spin 4s linear infinite'}).catch(()=>{});}if(typeof window.showLoveSongOverlay==='function')window.showLoveSongOverlay();};
  by('earlyBook').addEventListener('click',e=>{if(e.target===by('earlyBook'))closeEarlyBook()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeEarlyBook();});renderPage();
  // The main music play button remains usable. Reading the book is a separate intentional action.
 })();
