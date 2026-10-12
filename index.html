@@ -85,7 +85,17 @@ button,input,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1080px,
 #love-song-overlay #seed{opacity:1}
 #love-song-overlay #sprout,#love-song-overlay #grown,#love-song-overlay #bud,#love-song-overlay #flower,#love-song-overlay #rain,#love-song-overlay #umbrella,#love-song-overlay #watering,#love-song-overlay #garden{opacity:0}
 #love-song-overlay #sprout,#love-song-overlay #grown,#love-song-overlay #bud,#love-song-overlay #flower,#love-song-overlay #rain,#love-song-overlay #umbrella,#love-song-overlay #watering,#love-song-overlay #garden{transition:opacity 1.4s ease}
-#love-song-overlay .person{transform-box:fill-box;transform-origin:center bottom;animation:gentleSway 4s ease-in-out infinite}
+#love-song-overlay .person{transform-box:fill-box;transform-origin:center bottom;animation:gentleSway 4s ease-in-out infinite;will-change:transform}
+#love-song-overlay #man-arm{transform-box:fill-box;transform-origin:0 0;animation:carefulReach 5s ease-in-out infinite}
+#love-song-overlay #woman-arm{transform-box:fill-box;transform-origin:100% 0;animation:carefulReach 5s ease-in-out infinite reverse}
+#love-song-overlay #seed{animation:seedGlow 2.8s ease-in-out infinite}
+#love-song-overlay #sprout,#love-song-overlay #grown,#love-song-overlay #bud,#love-song-overlay #flower{transform-box:fill-box;transform-origin:50% 100%}
+#love-song-overlay #sprout.on{animation:sproutUp 2.4s cubic-bezier(.2,.8,.2,1) both}
+#love-song-overlay #grown.on{animation:stemGrow 3s cubic-bezier(.2,.8,.2,1) both}
+#love-song-overlay #garden.on{animation:gardenBloom 3.2s cubic-bezier(.2,.8,.2,1) both}
+#love-song-overlay #umbrella.on{animation:umbrellaProtect 1.2s ease-out both}
+#love-song-overlay #rain.on{animation:rainFadeIn 1s ease both}
+#love-song-overlay #petals.on{animation:gardenBloom 2s ease both}
 #love-song-overlay #woman{animation-delay:-1.7s}
 #love-song-overlay .arm{stroke-dasharray:150;stroke-dashoffset:0;transition:stroke-dashoffset 1.2s ease}
 #love-song-overlay #rain line{animation:rainfall .7s linear infinite}
@@ -100,7 +110,14 @@ button,input,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1080px,
 #love-song-overlay .love-note span{margin-top:16px;font:italic clamp(14px,3vw,18px) Georgia,serif;color:#d7c8ff}
 #love-song-overlay .restart-story{margin-top:26px;border:1px solid #d7c7ff77;background:#ffffff0c;color:#f6eaff;border-radius:999px;padding:11px 17px;cursor:pointer}
 @keyframes starDrift{to{background-position:110px 120px,-30px -40px}}
-@keyframes gentleSway{0%,100%{transform:translateY(0) rotate(-.5deg)}50%{transform:translateY(-4px) rotate(.5deg)}}
+@keyframes gentleSway{0%,100%{transform:translateY(0) rotate(-.4deg)}50%{transform:translateY(-5px) rotate(.4deg)}}
+@keyframes carefulReach{0%,100%{transform:rotate(0deg)}35%,65%{transform:rotate(-3deg)}}
+@keyframes seedGlow{0%,100%{filter:drop-shadow(0 0 0 #f4b9df00)}50%{filter:drop-shadow(0 0 7px #f4b9dfaa)}}
+@keyframes sproutUp{from{transform:scaleY(.15);opacity:0}to{transform:scaleY(1);opacity:1}}
+@keyframes stemGrow{from{transform:scaleY(.2);opacity:.1}to{transform:scaleY(1);opacity:1}}
+@keyframes gardenBloom{from{transform:scale(.45);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes umbrellaProtect{from{transform:translateY(-24px) scale(.85);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
+@keyframes rainFadeIn{from{opacity:0}to{opacity:1}}
 @keyframes rainfall{from{transform:translateY(-12px)}to{transform:translateY(24px)}}
 @keyframes canTilt{0%,100%{transform:rotate(0)}45%,65%{transform:rotate(-13deg)}}
 @keyframes petalFall{0%,100%{transform:translate(0,-8px) rotate(0);opacity:.3}50%{transform:translate(20px,30px) rotate(45deg);opacity:1}}
@@ -442,15 +459,17 @@ el('audio').addEventListener('ended',()=>{el('playBtn').textContent='▶ Dinle';
   const o=byId('love-song-overlay');if(!o)return;
   timers.forEach(clearTimeout);timers=[];scenes.forEach(off);off('story-ending');byId('story-ending').classList.remove('visible');
   o.classList.add('active');o.setAttribute('aria-hidden','false');caption('Her şey küçücük bir tohumla başladı.');
-  later(3,()=>caption('Toprağa birlikte emanet ettiler.'));
+  later(3,()=>caption('Diz çöküp toprağı birlikte hazırladılar.'));
+  later(4.5,()=>caption('Küçücük tohumu aynı umutla örttüler.'));
   later(5,()=>{caption('İlk filiz, sabırla gün ışığına uzandı.');on('sprout');});
-  later(9,()=>{caption('Biri toprağı tuttu, diğeri can suyu verdi.');on('grown');on('watering');});
+  later(9,()=>{caption('Birlikte suladılar; her damla bir umuttu.');on('grown');on('watering');});
   later(13,()=>{off('watering');caption('Her gün biraz daha büyüdü.');on('bud');});
   later(17,()=>{caption('Sonra gökyüzü karardı, yağmur başladı.');on('rain');});
-  later(20,()=>{caption('Birlikte şemsiyelerini onun üzerine tuttular.');on('umbrella');});
+  later(20,()=>{caption('Şemsiyeyi birlikte tutup filizi korudular.');on('umbrella');});
+  later(23,()=>caption('Yağmurun altında bile ellerini bırakmadılar.'));
   later(25,()=>{off('rain');off('umbrella');caption('Yağmur dindi. Küçük lale artık hazırdı.');});
   later(28,()=>{caption('Emek verdikleri çiçek sonunda açtı.');on('flower');});
-  later(32,()=>{caption('Ve sevgileri, bütün bir bahçeye dönüştü.');on('garden');on('petals');});
+  later(32,()=>{caption('Bir çiçek, birlikte büyüyen bir bahçeye dönüştü.');on('garden');on('petals');});
   later(35,()=>{byId('story-ending').classList.add('visible');});
  };
  document.addEventListener('click',function(event){const target=event.target&&event.target.closest?event.target.closest('#playBtn, .play-btn, [data-action="play-song"]'):null;if(!target)return;const audio=byId('audio');if(audio&&!audio.paused)window.showLoveSongOverlay();else if(audio)setTimeout(()=>{if(!audio.paused)window.showLoveSongOverlay();},180);});
